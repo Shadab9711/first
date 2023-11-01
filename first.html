@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+    <style>
+        .btn{
+        width: 100px;
+            height: 100px;
+            background-color: darkcyan;
+            display:  inline-block;
+        }
+        .active, .btn:hover{
+            background-color: red;
+            color: white;
+        }
+        .hell{
+            width: 100%;
+            height: 300px;
+            background-color: red;
+            
+            
+        }
+        .hell1{
+            width: 100%;
+            height: 300px;
+            background-color: blue;
+            display: none;
+            
+        }
+        .hell2{
+            width: 100%;
+            height: 300px;
+            background-color: green;
+            display: none;
+            
+        }
+        .hell3{
+            width: 100%;
+            height: 300px;
+            background-color: orange;
+            display: none;
+            
+        }
+        .hell4{
+            width: 100%;
+            height: 300px;
+            background-color: gray;
+            display: none;
+            
+        }
+
+        .nav-tabs .nav-link.active {
+            color: #ffffff;
+            font-style: normal;
+            background: #fa9db7;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="myDIV">
+    <div onclick="sum()"   class="btn" > click me1 </div>
+    <div onclick="sum1()"  class="btn active" > click me2 </div>
+    <div onclick="sum2()"  class="btn" > click me3 </div>
+    <div onclick="sum3()"  class="btn" > click me4 </div>
+    <div onclick="sum4()"  class="btn" > click me5 </div>
+</div>
+
+    <div class="hell">
+        <h1>jksjfskljfa</h1>
+        <h1>jksjfskljfa</h1>
+    </div>
+
+    <div class="hell1">
+        <h1>jksjfskljfa</h1>
+        <h1>jksjfskljfa</h1>
+    </div>
+    <div class="hell2">
+        <h1>jksjfskljfa</h1>
+        <h1>jksjfskljfa</h1>
+    </div>
+    <div class="hell3">
+        <h1>jksjfskljfa</h1>
+        <h1>jksjfskljfa</h1>
+    </div>
+    <div class="hell4">
+        <h1>jksjfskljfa</h1>
+        <h1>jksjfskljfa</h1>
+    </div>
+    
+
+
+    <script>
+        
+        var one = document.querySelector(".hell");
+        var two = document.querySelector(".hell1");
+        var three = document.querySelector(".hell2");
+        var four = document.querySelector(".hell3");
+        var five = document.querySelector(".hell4");
+        // var button = document.querySelector(".click");       
+       
+        var display = 0;
+        
+
+        function sum(){
+            if(display==1){
+                one.style.display="block";
+                two.style.display="none";
+                three.style.display="none";
+                four.style.display="none";
+                five.style.display="none";
+                display=0;
+            }else {
+                one.style.display="block";
+                two.style.display="none";
+                three.style.display="none";
+                four.style.display="none";
+                five.style.display="none";
+                display=1;
+            }
+
+           
+        
+        }
+
+        
+        function sum1(){
+            if(display==1){
+                one.style.display="none";
+                two.style.display="block";
+                three.style.display="none";
+                four.style.display="none";
+                five.style.display="none";
+                display=0;
+            }else {
+                one.style.display="none";
+                two.style.display="block";
+                three.style.display="none";
+                four.style.display="none";
+                five.style.display="none";
+               display=1;
+            }
+
+         
+        
+        }
+    
+        function sum2(){
+            if(display==1){
+                one.style.display="none";
+                two.style.display="none";
+                three.style.display="block";
+                four.style.display="none";
+                five.style.display="none";
+               display=0;
+            }else {
+                one.style.display="none";
+                two.style.display="none";
+                three.style.display="block";
+                four.style.display="none";
+                five.style.display="none";
+                display=1;
+            }
+
+         
+        }
+        
+        function sum3(){
+            if(display==1){
+                one.style.display="none";
+                two.style.display="none";
+                three.style.display="none";
+                four.style.display="block";
+                five.style.display="none";
+                display=0;
+            }else {
+                one.style.display="none";
+                two.style.display="none";
+                three.style.display="none";
+                four.style.display="block";
+                five.style.display="none";
+                display=1;
+            }
+          
+        
+        }
+        
+        function sum4(){
+            if(display==1){
+                one.style.display="none";
+                two.style.display="none";
+                three.style.display="none";
+                four.style.display="none";
+                five.style.display="block";
+                display=0;
+            }else {
+                one.style.display="none";
+                two.style.display="none";
+                three.style.display="none";
+                four.style.display="none";
+                five.style.display="block";
+                display=1;
+            }
+           
+        
+        }
+
+        
+
+             var header = document.getElementById("myDIV");
+             var btns = header.getElementsByClassName("btn");
+             for (var i = 0; i < btns.length; i++) {
+               btns[i].addEventListener("click", function() {
+               var current = document.getElementsByClassName("active");
+               if (current.length > 0) { 
+                 current[0].className = current[0].className.replace(" active", "");
+               }
+               this.className += " active";
+               });
+             }
+
+
+        
+
+        
+//         $(document).ready(function(){  
+//     $(".click").click(function(){  
+//         $("#das1").css("background-color", "red");  
+//     });  
+// }); 
+// $(document).ready(function(){  
+//     $(".click1").click(function(){  
+//         $("#das2").css("background-color", "red");  
+//         $("#das1").css("background-color", "none");  
+//     });  
+// });     $(document).ready(function(){  
+//     $(".click2").click(function(){  
+//         $("#das3").css("background-color", "red");  
+//         $("#das2").css("background-color", "none");  
+//     });  
+// });     $(document).ready(function(){  
+//     $(".click3").click(function(){  
+//         $("#das4").css("background-color", "red");
+//         $("#das3").css("background-color", "none");  
+//     });  
+// });     $(document).ready(function(){  
+//     $(".click4").click(function(){  
+//         $("#das5").css("background-color", "red"); 
+//         $("#das4").css("background-color", "none"); 
+//     });  
+// }); 
+        
+    
+        
+        
+    </script>
+    
+</body>
+</html>
